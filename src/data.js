@@ -1,0 +1,211 @@
+// Dados de exemplo exibidos no protótipo (todos vindos do PDF).
+// O App guarda uma cópia em estado e as telas alteram essa cópia.
+
+export const initialData = {
+  tutor: {
+    name: 'Shuri',
+    email: 'shuri@exemplo.com',
+    phone: '(11) 99999-0000',
+    city: 'São Paulo, SP',
+  },
+
+  // Luna é o pet padrão em todas as telas
+  pets: [
+    {
+      id: 'luna',
+      name: 'Luna',
+      letter: 'L',
+      species: 'Cachorro',
+      breed: 'Golden Retriever',
+      age: '2 anos',
+      sex: 'Fêmea',
+      weight: '28 kg',
+      lastVisit: 'Clínica Vet Vida',
+      nextVaccine: '24 de novembro',
+    },
+    {
+      id: 'fluffy',
+      name: 'Fluffy',
+      letter: 'F',
+      species: 'Cachorro',
+      breed: 'Labrador Retriever',
+      age: '2 anos',
+      sex: 'Macho',
+      weight: '30 kg',
+      lastVisit: 'Clínica Vet Vida',
+      nextVaccine: '—',
+    },
+  ],
+
+  // Rotina de quarta, 14 de outubro de 2026
+  reminders: [
+    { id: 1, title: 'Café da manhã', time: '08:00', detail: 'Ração e água', done: true, repeat: 'Diário' },
+    { id: 2, title: 'Passeio curto', time: '10:00', detail: 'Parque Verde', done: false, repeat: 'Diário' },
+    { id: 3, title: 'Vermífugo mensal', time: '14:00', tag: 'Saúde', done: false, repeat: 'Mensal' },
+    { id: 4, title: 'Escovação', time: '19:00', done: false, repeat: 'Diário' },
+  ],
+
+  // Vacina V8 agendada (aparece em Rotina, Saúde e Notificações)
+  v8Scheduled: true,
+
+  posts: [
+    {
+      id: 'p1',
+      author: 'Shuri',
+      initials: 'S',
+      time: 'há 2 h',
+      where: 'Parque Verde',
+      text: 'Manhã de passeio com a Luna. Alguém mais por aqui hoje?',
+      photo: true,
+      likes: 24,
+      comments: 6,
+      group: 'Cachorros da vizinhança',
+      mine: true,
+      feed: 'geral',
+    },
+    {
+      id: 'p2',
+      author: 'Rafael Lima',
+      initials: 'RL',
+      time: 'há 5 h',
+      where: 'Dúvida',
+      text: 'Indicação de veterinário para filhote de Golden na zona oeste?',
+      photo: false,
+      likes: 8,
+      comments: 12,
+      group: 'Cachorros da vizinhança',
+      feed: 'geral',
+    },
+    {
+      id: 'p3',
+      author: 'Marina Costa',
+      initials: 'MC',
+      time: 'há 1 h',
+      text: 'Encontro de cachorros no sábado, às 9h, no Parque Verde. Quem vai?',
+      photo: true,
+      likes: 18,
+      comments: 9,
+      group: 'Cachorros da vizinhança',
+      feed: 'grupos',
+    },
+    {
+      id: 'p4',
+      author: 'Ana Souza',
+      initials: 'AS',
+      time: 'há 4 h',
+      text: 'Dicas para a primeira semana com um cão adotado em casa nova.',
+      photo: false,
+      likes: 31,
+      comments: 14,
+      group: 'Adoção responsável',
+      feed: 'grupos',
+    },
+  ],
+
+  comments: [
+    { id: 'c1', author: 'Rafael Lima', initials: 'RL', time: '1 h', text: 'Estamos chegando em 10 minutos com a Luna.' },
+    { id: 'c2', author: 'Ana Souza', initials: 'AS', time: '40 min', text: 'Que lindo! Vou passar aí mais tarde.' },
+    { id: 'c3', author: 'Você', initials: 'S', time: 'agora', text: 'Obrigada, pessoal!', mine: true },
+  ],
+
+  groups: [
+    { id: 'g1', name: 'Cachorros da vizinhança', members: 128, member: false, kind: 'Cachorros', about: 'Passeios, encontros e dicas entre tutores do bairro.' },
+    { id: 'g2', name: 'Gatos de apartamento', members: 86, member: false, kind: 'Gatos', about: 'Dicas para gatos que vivem em apartamento.' },
+    { id: 'g3', name: 'Adoção responsável', members: 214, member: true, kind: 'Todos', about: 'Adoção, lares temporários e primeiros cuidados.' },
+    { id: 'g4', name: 'Alimentação saudável', members: 72, member: false, kind: 'Todos', about: 'Rações, petiscos e receitas para pets.' },
+  ],
+
+  places: [
+    {
+      id: 'parque',
+      name: 'Parque Verde',
+      kind: 'Parque',
+      icon: 'pad',
+      distance: '1,2 km',
+      note: 'Aceita pets',
+      tags: ['Aceita pets', 'Área externa'],
+      about: 'Gramado amplo, trilhas sombreadas e bebedouros para pets.',
+      address: 'Av. das Árvores, 500 · Vila Nova',
+      hours: 'Aberto · fecha às 22:00',
+    },
+    {
+      id: 'cafe',
+      name: 'Café com Pata',
+      kind: 'Café',
+      icon: 'cup',
+      distance: '1,8 km',
+      note: 'Área externa',
+      tags: ['Aceita pets', 'Área externa'],
+      about: 'Ambiente aberto, com água para os pets e mesas na calçada. Chegue cedo nos fins de semana.',
+      address: 'Rua das Flores, 210 · Vila Nova',
+      hours: 'Aberto · fecha às 19:00',
+    },
+    {
+      id: 'vet',
+      name: 'Clínica Vet Vida',
+      kind: 'Veterinário',
+      icon: 'plus',
+      distance: '2,4 km',
+      note: null,
+      tags: ['Aceita pets'],
+      about: 'Clínica veterinária com vacinas, consultas e retornos.',
+      address: 'Rua dos Ipês, 45 · Centro',
+      hours: 'Aberto · fecha às 20:00',
+    },
+  ],
+
+  lostPets: [
+    {
+      id: 'fluffy',
+      name: 'Fluffy',
+      breed: 'Labrador Retriever',
+      area: 'Vila Nova',
+      seen: 'Visto há 2 h',
+      distance: '1,4 km',
+      kind: 'Cachorros',
+      description: 'Labrador caramelo, usa coleira azul e atende pelo nome. Pode estar assustado.',
+      lastSeen: 'Hoje, 16:30',
+      place: 'Rua das Flores · Vila Nova',
+      mine: true,
+    },
+    {
+      id: 'bela',
+      name: 'Bela',
+      breed: 'Vira-lata caramelo',
+      area: 'Centro',
+      seen: 'Visto ontem',
+      distance: '2,1 km',
+      kind: 'Cachorros',
+      description: 'Vira-lata caramelo de porte médio, muito dócil.',
+      lastSeen: 'Ontem',
+      place: 'Centro',
+    },
+    {
+      id: 'beto',
+      name: 'Beto',
+      breed: 'Gato preto',
+      area: 'Jardim Alto',
+      seen: 'Visto há 3 dias',
+      distance: '3,0 km',
+      kind: 'Gatos',
+      description: 'Gato preto, tímido, com coleira vermelha.',
+      lastSeen: 'Há 3 dias',
+      place: 'Jardim Alto',
+    },
+  ],
+
+  // tons alternados dos quadros do álbum, na ordem do PDF
+  photos: [1, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1].map((dark, i) => ({
+    id: i + 1,
+    dark: dark === 1,
+    tag: i % 3 === 0 ? 'Aniversário' : 'Passeios',
+  })),
+
+  messages: [
+    { id: 'm1', me: false, text: 'Olá! Como posso ajudar com a Luna hoje?' },
+    { id: 'm2', me: true, text: 'Preciso de ajuda com a rotina de consultas. A próxima vacina é em novembro.' },
+    { id: 'm3', me: false, text: 'Posso criar um lembrete para a V8 e outro para o retorno. Quer que eu agende?' },
+    { id: 'm4', me: true, text: 'Quero sim, obrigada!' },
+    { id: 'm5', me: false, text: 'Pronto. Os lembretes já estão na sua Rotina.' },
+  ],
+};
